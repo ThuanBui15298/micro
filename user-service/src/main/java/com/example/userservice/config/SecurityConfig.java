@@ -25,10 +25,7 @@ import java.util.Arrays;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String[] NON_AUTHENTICATION_ENDPOINT = {
-            "/api/v1/users/sign-in",
-            "/api/v1/import/**",
-            "/api/v1/users/username",
-            "/api/v1/users/usernames"
+            "/api/v1/users/sign-in"
     };
 
     @Autowired
