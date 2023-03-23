@@ -37,9 +37,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-        if (request.getServletPath().startsWith("/api/v1/users/sign-in")
-                || request.getServletPath().startsWith("/api/v1/import")
-                || request.getServletPath().equalsIgnoreCase("/api/v1/users/usernames")) {
+        if (request.getServletPath().startsWith("/user/sign-in")) {
             filterChain.doFilter(request, response);
         } else {
             String token = tokenProvider.getJwtFromRequest(request);
